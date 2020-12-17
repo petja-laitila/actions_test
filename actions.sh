@@ -17,7 +17,7 @@ git commit -m "Updated some stuff here"
 echo Merging changes back to devel
 git fetch
 git checkout -B devel origin/devel
-# git pull
+git pull
 git merge master
 echo $commitmessage | tee -a test
 git add .

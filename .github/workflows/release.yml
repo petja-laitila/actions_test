@@ -7,6 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        fetch-depth: 10
       - name: Do commit stuff
         run: ./actions.sh
