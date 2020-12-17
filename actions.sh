@@ -4,7 +4,7 @@ commitmessage=`git log --pretty=format:"%s" -1`;
 #   eval `ssh-agent -s`
 #   ssh-add .travisdeploykey
 #   rm -f .travisdeploykey
-git remote set-url origin git@github.com:petja-laitila/actions_test.git
+# git remote set-url origin git@github.com:petja-laitila/actions_test.git
 git config user.name "Github Actions Bot"
 git config user.email "github-actions[bot]@users.noreply.github.com"
 git config --global push.default simple
