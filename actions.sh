@@ -7,14 +7,14 @@ commitmessage=`git log --pretty=format:"%s" -1`;
 # git remote set-url origin git@github.com:petja-laitila/actions_test.git
 git config user.name "Github Actions Bot"
 git config user.email "github-actions[bot]@users.noreply.github.com"
-git config --global push.default simple
-git checkout master
-git reset --hard
-git pull
+# git config --global push.default simple
+# git checkout master
+# git reset --hard
+# git pull
 echo "committia pesee" | tee -a test
 git add .
 git commit -m "Updated some stuff here"
-echo Merging changes back to devel and doing further stuff
+echo Merging changes back to devel
 git checkout devel
 git pull
 git merge master
