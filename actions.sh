@@ -23,5 +23,5 @@ echo $commitmessage | tee -a test
 git add .
 git commit -m "Updated latest stuff"
 git pull
-git push
+git push --set-upstream origin devel
 # fi;
