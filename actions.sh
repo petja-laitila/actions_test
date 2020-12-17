@@ -17,6 +17,7 @@ if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from pe
     git push
     echo Merging changes back to devel
     git fetch
+    git pull
     git checkout devel
     git pull
     git merge master
