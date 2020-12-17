@@ -15,14 +15,15 @@ if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from pe
     git add .
     git commit -m "Updated some stuff here"
     git push
-    echo Merging changes back to devel
-    git fetch
-    git checkout devel
-    git pull
-    git merge master
-    echo "Updated latest" | tee -a test
-    git add .
-    git commit -m "Updated latest stuff"
-    git pull
-    git push --set-upstream origin devel
+    # echo Merging changes back to devel
+    # git fetch
+    # git pull
+    # git checkout devel
+    # git pull
+    # git merge master
+    # echo "Updated latest" | tee -a test2
+    # git add .
+    # git commit -m "Updated latest stuff"
+    # git pull
+    # git push --set-upstream origin devel
 fi;
