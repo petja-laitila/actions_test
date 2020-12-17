@@ -22,5 +22,5 @@ echo "hommit message" | tee -a test
 git add .
 git commit -m "Updated latest stuff"
 git pull
-git push --set-upstream origin devel
+git push
 # fi;
