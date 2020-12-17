@@ -15,10 +15,11 @@ echo "committia pesee" | tee -a test
 git add .
 git commit -m "Updated some stuff here"
 echo Merging changes back to devel
-git checkout devel
-git pull
+git fetch
+git checkout -B devel origin/devel
+# git pull
 git merge master
-echo "hommit message" | tee -a test
+echo $commitmessage | tee -a test
 git add .
 git commit -m "Updated latest stuff"
 git pull
