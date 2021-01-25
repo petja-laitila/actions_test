@@ -1,8 +1,8 @@
 #!/bin/bash
 commitmessage=`git log --pretty=format:"%s" -1`;
 if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from petja-laitila/devel"*) ]]; then 
-  git config user.name "Petja Laitila"
-  git config user.email "petja.laitila@otavanopisto.fi"
+  git config user.name "Joku Muunimi"
+  git config user.email "ihan@huuhhaaata.com"
   # Use default merge strategy
   git config pull.rebase false
   # Push one branch at a time
