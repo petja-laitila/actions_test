@@ -8,7 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-#          token: ${{secrets.REPO_GHA_PAT}}
           fetch-depth: 20
       - name: Do commit stuff
         run: ./actions.sh
