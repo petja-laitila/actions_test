@@ -7,7 +7,7 @@ if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from pe
   git config pull.rebase false
   # Push one branch at a time
   git config --global push.default simple
-  git checkout master
+  git checkout master 
   git reset --hard
   git pull
 
