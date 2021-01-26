@@ -6,11 +6,11 @@ jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: webfactory/ssh-agent@v0.4.1
-        with:
-          ssh-private-key: ${{ secrets.GA_DEPLOY_KEY }}
       - uses: actions/checkout@v2
         with:
           fetch-depth: 20
+      - uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.GA_DEPLOY_KEY }}
       - name: Do commit stuff
         run: ./actions.sh
