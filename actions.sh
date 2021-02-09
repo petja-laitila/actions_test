@@ -1,6 +1,8 @@
 #!/bin/bash
 commitmessage=`git log --pretty=format:"%s" -1`;
 if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from petja-laitila/devel"*) ]]; then 
+  eval `ssh-agent -s`
+  ssh-add - <<<"${{ secrets.GA_DEPLOY_KEY }}"
   git config user.name "Github Actions"
   git config user.email "github-actions[bot]@users.noreply.github.com"
   # Use default merge strategy
