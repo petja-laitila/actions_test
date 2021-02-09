@@ -11,9 +11,10 @@ if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from pe
   git config --global push.default simple
   
   pushd .
-  mkdir ~/tests
-  cd ~/tests
+  mkdir ~/testing
+  cd ~/testing
   git clone git@github.com:petja-laitila/actions_test.git
+  echo $PWD
   ls -lha
   popd
   git checkout master 
