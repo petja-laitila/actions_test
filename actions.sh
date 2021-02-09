@@ -15,6 +15,7 @@ if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from pe
   cd ~/testing
   git clone git@github.com:petja-laitila/actions_test.git
   echo $PWD
+  cd actions_test
   git checkout master 
   git reset --hard
   git pull
