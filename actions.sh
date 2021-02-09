@@ -1,14 +1,21 @@
 #!/bin/bash
 commitmessage=`git log --pretty=format:"%s" -1`;
 if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from petja-laitila/devel"*) ]]; then 
-#  eval `ssh-agent -s`
-#  ssh-add - <<< "${GA_DEPLOY_KEY}"
+  eval `ssh-agent -s`
+  ssh-add - <<< "${GA_DEPLOY_KEY}"
   git config user.name "Github Actions"
   git config user.email "github-actions[bot]@users.noreply.github.com"
   # Use default merge strategy
   git config pull.rebase false
   # Push one branch at a time
   git config --global push.default simple
+  
+  pushd .
+  mkdir ~/tests
+  cd ~/tests
+  git clone git@github.com:petja-laitila/actions_test.git
+  ls -lha
+  popd
   git checkout master 
   git reset --hard
   git pull
