@@ -15,8 +15,6 @@ if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from pe
   cd ~/testing
   git clone git@github.com:petja-laitila/actions_test.git
   echo $PWD
-  ls -lha
-  popd
   git checkout master 
   git reset --hard
   git pull
@@ -35,5 +33,7 @@ if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from pe
   git commit -m "Updated latest stuff to devel"
   git pull
   git push
+  popd
+  
   #  --set-upstream origin devel
 fi;
