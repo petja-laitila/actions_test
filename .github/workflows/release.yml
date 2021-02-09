@@ -15,4 +15,4 @@ jobs:
 #        with:
 #          ssh-private-key: ${{ secrets.GA_DEPLOY_KEY }}
       - name: Do commit stuff
-        run: ./actions.sh
+        run: bash actions.sh
