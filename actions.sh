@@ -3,8 +3,8 @@ commitmessage=`git log --pretty=format:"%s" -1`;
 if [[ ($commitmessage == *"Merge pull request"*) && ($commitmessage == *"from petja-laitila/devel"*) ]]; then 
   eval `ssh-agent -s`
   ssh-add - <<< "${GA_DEPLOY_KEY}"
-  git config --global user.name "Mukane Kidkgu"
-  git config --global user.email "mk[bot]@users.noreply.example.com"
+  git config --global user.name "Github Actions"
+  git config --global user.email "github-actions[bot]@users.noreply.github.com"
   # Use default merge strategy
   git config --global pull.rebase false
   # Push one branch at a time
