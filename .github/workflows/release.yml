@@ -12,10 +12,10 @@ jobs:
 #      - uses: webfactory/ssh-agent@v0.4.1
 #        with:
 #          ssh-private-key: ${{ secrets.GA_DEPLOY_KEY }}
-      - name: Do commit stuff
-        run: ./actions.sh
-        env:
-          GA_DEPLOY_KEY: ${{ secrets.GA_DEPLOY_KEY }}
+#      - name: Do commit stuff
+#        run: ./actions.sh
+#        env:
+#          GA_DEPLOY_KEY: ${{ secrets.GA_DEPLOY_KEY }}
       - name: Invoke deployment hook
         uses: distributhor/workflow-webhook@v1
         env:
