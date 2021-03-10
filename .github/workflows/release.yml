@@ -16,3 +16,9 @@ jobs:
         run: ./actions.sh
         env:
           GA_DEPLOY_KEY: ${{ secrets.GA_DEPLOY_KEY }}
+      - name: Invoke deployment hook
+        uses: distributhor/workflow-webhook@v1
+        env:
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
+          webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
+          webhook_auth: "${{ secrets.WEBHOOK_USER }}:${{ secrets.WEBHOOK_USER_PASS }}"
