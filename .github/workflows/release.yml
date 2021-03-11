@@ -16,4 +16,4 @@ jobs:
 #        env:
 #          GA_DEPLOY_KEY: ${{ secrets.GA_DEPLOY_KEY }}
       - name: Invoke hook
-        run: curl -X POST https://${{ secrets.WEBHOOK_USER }}:${{ secrets.WEBHOOK_USER_PASS }}@WEBHOOK_URL
+        run: curl -X POST https://${{ secrets.WEBHOOK_USER }}:${{ secrets.WEBHOOK_USER_PASS }}@${{ secrets.WEBHOOK_URL }}
