@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 20
           ssh-key: ${{ secrets.GA_DEPLOY_KEY }}
           ssh-strict: false
 #      - uses: webfactory/ssh-agent@v0.4.1
@@ -16,9 +15,5 @@ jobs:
 #        run: ./actions.sh
 #        env:
 #          GA_DEPLOY_KEY: ${{ secrets.GA_DEPLOY_KEY }}
-      - name: Invoke deployment hook
-        uses: distributhor/workflow-webhook@v1
-        env:
-          webhook_url: ${{ secrets.WEBHOOK_URL }}
-          webhook_secret: ${{ secrets.WEBHOOK_SECRET }}
-          webhook_auth: "${{ secrets.WEBHOOK_USER }}:${{ secrets.WEBHOOK_USER_PASS }}"
+      - name: Invoke hook
+        run: curl -X POST https://${{ secrets.WEBHOOK_USER }}:${{ secrets.WEBHOOK_USER_PASS }}@WEBHOOK_URL
