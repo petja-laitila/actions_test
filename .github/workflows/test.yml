@@ -1,0 +1,11 @@
+name: Test something
+on: workflow_dispatch
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 20
+          ssh-key: ${{ secrets.GA_DEPLOY_KEY }}
+          ssh-strict: false
